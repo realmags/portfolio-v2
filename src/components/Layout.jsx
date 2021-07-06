@@ -16,10 +16,16 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
+
+    @media (max-width: 699px) {
+    font-size: 12px;
+    }
+
+
   }
 
   body {
-    background: #CF4647;
+    background: black;
     /* TODO: ADD GOOGLE FONT IMPORT */
     font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
   }
@@ -33,7 +39,6 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     list-style: none;
   }
-
 `;
 
 function Layout({ children }) {
