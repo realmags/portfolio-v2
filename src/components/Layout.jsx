@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import LocomotiveScroll from "locomotive-scroll";
 
 // styled components
 import { createGlobalStyle } from "styled-components";
@@ -21,13 +22,29 @@ const GlobalStyle = createGlobalStyle`
     font-size: 12px;
     }
 
+    @media (min-width: 700px) and (max-width: 999px) {
+    font-size: 13px;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1199px) {
+    font-size: 14px;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1599px) {
+    font-size: 16px;
+    }
+
+    @media (min-width: 2400px) {
+    font-size: 22px;
+    }
+
 
   }
 
   body {
     background: black;
     /* TODO: ADD GOOGLE FONT IMPORT */
-    font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
+    font-family: Montserrat ,Verdana, Geneva, Tahoma, sans-serif;
   }
 
   a {
@@ -42,11 +59,25 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function Layout({ children }) {
+  let scrollContainer = useRef(null);
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: scrollContainer.current,
+      smooth: true,
+    });
+
+    return () => scroll.destroy();
+  }, []);
+  // const scroll = new LocomotiveScroll();
+
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <main>{children}</main>
+      <div ref={scrollContainer} data-scroll-container>
+        <Header />
+        <main>{children}</main>
+      </div>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   @media (max-width: 699px) {
@@ -14,4 +14,16 @@ export const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
   max-width: 95rem;
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  width: 100%;
+  /* height: 100%; */
+
+  ${(props) =>
+    props.direction &&
+    css`
+      flex-direction: ${props.direction};
+    `}
 `;

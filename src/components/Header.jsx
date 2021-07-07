@@ -7,9 +7,10 @@ import { Container } from "../styles/globalStyles";
 function Header() {
   // TODO: ADD REACT ROUTER
   return (
+    // <div data-scroll-section>
     <header>
-      <Container>
-        <HeaderNav>
+      <Container data-scroll-section>
+        <HeaderNav data-scroll data-scroll-speed="3" data-scroll-position="top">
           <Logo>
             <a href="#">kbcm</a>
           </Logo>
@@ -27,6 +28,7 @@ function Header() {
         </HeaderNav>
       </Container>
     </header>
+    // </div>
   );
 }
 

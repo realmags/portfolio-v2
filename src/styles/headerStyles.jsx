@@ -22,9 +22,10 @@ export const HeaderNav = styled.nav`
   align-items: center;
   text-transform: uppercase;
   color: black;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding-top: 20px;
-  border-top: 1px solid #f1fa3c;
+  /* border-top: 1px solid #f1fa3c; */
+  /* margin-bottom: 5vh; */
 `;
 
 export const Logo = styled.span`
