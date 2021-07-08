@@ -1,21 +1,10 @@
 import styled from "styled-components";
 
+export const HeaderContainer = styled.header`
+  height: 45px;
+`;
+
 export const HeaderNav = styled.nav`
-  /* TODO: ADD EXTRA MEDIA QUERIES */
-  /* @media (min-width: 1024px) {
-    max-width: 960px;
-  } */
-
-  /* @media (min-width: 1216px) {
-    max-width: 1152px;
-  } */
-
-  /* TODO: ADJUST MEDIA QUERY */
-  /* @media (min-width: 1408px) {
-    max-width: 1244px;
-    margin: 20px auto 0px auto;
-  } */
-
   font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   justify-content: space-between;
@@ -24,6 +13,7 @@ export const HeaderNav = styled.nav`
   color: black;
   /* margin-top: 20px; */
   padding-top: 20px;
+  /* width: 100vw; */
   /* border-top: 1px solid #f1fa3c; */
   /* margin-bottom: 5vh; */
 `;

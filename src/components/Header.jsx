@@ -1,16 +1,21 @@
 import React from "react";
 
 // Styled components
-import { HeaderNav, Logo, NavList } from "../styles/headerStyles";
+import {
+  HeaderContainer,
+  HeaderNav,
+  Logo,
+  NavList,
+} from "../styles/headerStyles";
 import { Container } from "../styles/globalStyles";
 
 function Header() {
   // TODO: ADD REACT ROUTER
   return (
     // <div data-scroll-section>
-    <header>
+    <HeaderContainer>
       <Container data-scroll-section>
-        <HeaderNav data-scroll data-scroll-speed="3" data-scroll-position="top">
+        <HeaderNav data-scroll data-scroll-speed="2" data-scroll-position="top">
           <Logo>
             <a href="#">kbcm</a>
           </Logo>
@@ -27,7 +32,7 @@ function Header() {
           </NavList>
         </HeaderNav>
       </Container>
-    </header>
+    </HeaderContainer>
     // </div>
   );
 }
