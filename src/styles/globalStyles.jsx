@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 
+// TODO: use attr for container
 export const Container = styled.div`
   @media (max-width: 699px) {
     padding-right: 20px;
@@ -14,6 +15,15 @@ export const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
   max-width: 95rem;
+
+  /* check if this affects banner */
+  position: relative;
+
+  ${(props) =>
+    props.rotate === "right" &&
+    css`
+      transform: rotate(5deg);
+    `}
 `;
 
 export const Flex = styled.div`
