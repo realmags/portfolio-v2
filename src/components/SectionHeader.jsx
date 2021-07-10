@@ -5,12 +5,16 @@ import { Container } from "../styles/globalStyles";
 import { SectionTitle, TitleShadow } from "../styles/sectionStyles";
 
 function SectionHeader({ children, tilt }) {
-  // TODO: add em tag to char at position
-  // const italicChar = text.splice(position, 1);
-
   return (
-    <Container tilt={tilt}>
-      <SectionTitle>{children}</SectionTitle>
+    <Container tilt={tilt} id="title-horizontal">
+      <SectionTitle
+        data-scroll
+        data-scroll-direction="horizontal"
+        data-scroll-target="#title-horizontal"
+        data-scroll-speed={3}
+      >
+        {children}
+      </SectionTitle>
       <TitleShadow left />
       <TitleShadow right />
     </Container>

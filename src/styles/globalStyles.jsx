@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 
-// TODO: use attr for container
 export const Container = styled.div`
   @media (max-width: 699px) {
     padding-right: 20px;
@@ -20,7 +19,13 @@ export const Container = styled.div`
   position: relative;
 
   ${(props) =>
-    props.rotate === "right" &&
+    props.tilt === "rotateRight" &&
+    css`
+      transform: rotate(-5deg);
+    `}
+
+  ${(props) =>
+    props.tilt === "rotateLeft" &&
     css`
       transform: rotate(5deg);
     `}

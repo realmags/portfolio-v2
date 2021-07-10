@@ -7,7 +7,6 @@ function App() {
   return (
     <Layout>
       <Banner />
-      <div style={{ width: "100vw", height: "50vh" }}></div>
       <About />
       <div style={{ width: "100vw", height: "50vh" }}></div>
     </Layout>

@@ -1,7 +1,10 @@
 import styled, { css } from "styled-components";
 
-export const Section = styled.section``;
+export const Section = styled.section`
+  margin-top: 250px;
+`;
 
+// TODO: ADD ATTR TO SECTIONTITLE
 export const SectionTitle = styled.h2`
   font-family: "Libre Baskerville", "Times New Roman", Times, serif;
   font-size: 5.5rem;
@@ -9,8 +12,9 @@ export const SectionTitle = styled.h2`
   background: #f1fa3c;
   color: black;
   white-space: nowrap;
-  transform: translateX(-10%);
+  /* transform: translateX(-10%); */
   width: 200%;
+  position: relative;
 
   .title-circle {
     width: 4rem;
@@ -20,12 +24,6 @@ export const SectionTitle = styled.h2`
     margin: 0 1rem;
     display: inline-block;
   }
-
-  ${(props) =>
-    props.tilt === "right" &&
-    css`
-      transform: rotateX(30deg);
-    `}
 `;
 
 // TODO: edit gradient, remove gray step
@@ -34,12 +32,11 @@ export const TitleShadow = styled.div`
   top: -2%;
   width: 30%;
   height: 104%;
-
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(53, 53, 56, 1) 50%,
-    rgba(253, 253, 253, 0) 100%
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
   );
 
   ${(props) =>
