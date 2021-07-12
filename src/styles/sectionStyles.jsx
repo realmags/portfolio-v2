@@ -5,16 +5,38 @@ export const Section = styled.section`
 `;
 
 // TODO: ADD ATTR TO SECTIONTITLE
-export const SectionTitle = styled.h2`
-  font-family: "Libre Baskerville", "Times New Roman", Times, serif;
-  font-size: 5.5rem;
-  text-transform: uppercase;
-  background: #f1fa3c;
-  color: black;
-  white-space: nowrap;
-  /* transform: translateX(-10%); */
-  width: 200%;
+export const SectionTitle = styled.div`
+  width: 100%;
   position: relative;
+  background: #f1fa3c;
+
+  ${(props) =>
+    props.tilt === "rotateRight" &&
+    css`
+      transform: rotate(-5deg);
+    `}
+
+  ${(props) =>
+    props.tilt === "rotateLeft" &&
+    css`
+      transform: rotate(5deg);
+    `}
+
+  ${(props) =>
+    props.marginTop &&
+    css`
+      margin-top: 200px;
+    `}
+
+  .title-text {
+    font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+    font-size: 5.5rem;
+    text-transform: uppercase;
+    color: black;
+    white-space: nowrap;
+    width: 200%;
+    position: relative;
+  }
 
   .title-circle {
     width: 4rem;

@@ -4,20 +4,21 @@ import React from "react";
 import { Container } from "../styles/globalStyles";
 import { SectionTitle, TitleShadow } from "../styles/sectionStyles";
 
-function SectionHeader({ children, tilt }) {
+function SectionHeader({ children, tilt, id }) {
   return (
-    <Container tilt={tilt} id="title-horizontal">
-      <SectionTitle
+    <SectionTitle tilt={tilt} id={id}>
+      <h2
+        className="title-text"
         data-scroll
         data-scroll-direction="horizontal"
-        data-scroll-target="#title-horizontal"
+        data-scroll-target={`#${id}`}
         data-scroll-speed={3}
       >
         {children}
-      </SectionTitle>
+      </h2>
       <TitleShadow left />
       <TitleShadow right />
-    </Container>
+    </SectionTitle>
   );
 }
 
