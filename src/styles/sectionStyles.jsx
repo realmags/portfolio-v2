@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
 
 export const Section = styled.section`
-  margin-top: 250px;
+  margin-top: 10rem;
 `;
 
 // TODO: ADD ATTR TO SECTIONTITLE
 export const SectionTitle = styled.div`
   width: 100%;
-  position: relative;
   background: #f1fa3c;
+  margin-bottom: 60px;
 
   ${(props) =>
     props.tilt === "rotateRight" &&
@@ -28,14 +28,31 @@ export const SectionTitle = styled.div`
       margin-top: 200px;
     `}
 
+  @media (max-width: 699px) {
+    margin-bottom: 30px;
+  }
+
   .title-text {
     font-family: "Libre Baskerville", "Times New Roman", Times, serif;
     font-size: 5.5rem;
     text-transform: uppercase;
     color: black;
-    white-space: nowrap;
-    width: 200%;
-    position: relative;
+    overflow: hidden;
+
+    .title-text__inner {
+      white-space: nowrap;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    @media (max-width: 699px) {
+      font-size: 8.5vw;
+    }
+
+    @media (min-width: 700px) and (max-width: 999px) {
+      font-size: 6.5vw;
+    }
   }
 
   .title-circle {
@@ -44,15 +61,19 @@ export const SectionTitle = styled.div`
     border-radius: 50%;
     background: white;
     margin: 0 1rem;
-    display: inline-block;
+    display: inline-table;
+
+    @media (max-width: 699px) {
+      width: 8.5vw;
+      height: 8.5vw;
+    }
   }
 `;
 
-// TODO: edit gradient, remove gray step
 export const TitleShadow = styled.div`
   position: absolute;
   top: -2%;
-  width: 30%;
+  width: 20%;
   height: 104%;
   background: linear-gradient(
     90deg,
