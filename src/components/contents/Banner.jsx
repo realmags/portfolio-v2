@@ -68,18 +68,6 @@ function Banner() {
           engineering student
         </BannerParagraph>
       </div>
-
-      {/* <Flex direction="column-reverse" data-scroll-section> */}
-      {/* <BannerTitle data-scroll>
-        K<em>e</em>nt <br /> Bry<em>a</em>n C.
-        <br /> Magli<em>n</em>ao
-      </BannerTitle>
-      <BannerParagraph data-scroll data-scroll-speed="-1">
-        <span className="tab"></span>A{" "}
-        <span className="highlight">front-end</span> developer and computer
-        engineering student
-      </BannerParagraph> */}
-      {/* </Flex> */}
     </BannerContainer>
   );
 }

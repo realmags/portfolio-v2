@@ -53,10 +53,31 @@ export const Paragraph = styled.p.attrs((props) => ({
   font-size: 1.2rem;
   color: white;
   min-width: 280px;
-  max-width: ${(props) => `calc(${props.width} * 1.8)`};
-  text-align: center;
-  margin: 40px 0;
+  width: 300px;
+  /* max-width: ${(props) => `calc(${props.width} * 1.8)`}; */
+  text-align: left;
+  margin: 20px 0;
   margin-top: ${(props) => props.marginTop && "200px"};
+
+  ${(props) =>
+    props.marginRight &&
+    css`
+      margin-right: 60px;
+    `}
+
+  ${(props) =>
+    props.marginLeft &&
+    css`
+      margin-left: 50px;
+    `}
+
+  ${(props) =>
+    props.emphasize &&
+    css`
+      font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+      margin-left: 30px;
+      width: 0;
+    `}
 
   @media (max-width: 699px) {
     margin: 20px 0;
@@ -67,18 +88,23 @@ export const Image = styled.span`
   background: grey;
   min-width: 280px;
   min-height: 400px;
-  margin: 40px 0;
+  margin: 20px 0;
 
   @media (max-width: 699px) {
     margin: 20px 0;
   }
 
   ${(props) =>
+    props.stretch &&
+    css`
+      width: 100% !important;
+    `}
+
+  ${(props) =>
     props.narrowWidth &&
     css`
-    width: 40%;
-    max-width: 500px;
-}
+      width: 40%;
+      max-width: 500px;
     `}
 
   ${(props) =>
@@ -102,10 +128,25 @@ export const Image = styled.span`
       max-height: 700px;
     `}
 
+  ${(props) =>
+    props.bleed &&
+    css`
+      transform: translate(10%, -20%);
+    `}
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
   }
+`;
+
+export const Highlight = styled.span`
+  border-radius: 80%;
+  border: 2px solid #f1fa3c;
+`;
+
+export const Tab = styled.span`
+  margin-left: 3rem;
 `;

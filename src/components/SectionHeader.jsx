@@ -2,7 +2,7 @@ import React from "react";
 
 // components
 import { Container } from "../styles/globalStyles";
-import { SectionTitle, TitleShadow } from "../styles/sectionStyles";
+import { SectionTitle, TitleShadow } from "../styles/sectionStylesDraft";
 
 function SectionHeader({ children, tilt, id, speed }) {
   return (

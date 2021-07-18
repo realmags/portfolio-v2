@@ -1,97 +1,123 @@
 import styled, { css } from "styled-components";
 
 export const Section = styled.section`
+  width: 100%;
   margin-top: 10rem;
 `;
 
-// TODO: ADD ATTR TO SECTIONTITLE
 export const SectionTitle = styled.div`
   width: 100%;
-  background: #f1fa3c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 60px;
+`;
 
-  ${(props) =>
-    props.tilt === "rotateRight" &&
-    css`
-      transform: rotate(-5deg);
-    `}
+export const TitleText = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
 
-  ${(props) =>
-    props.tilt === "rotateLeft" &&
-    css`
-      transform: rotate(5deg);
-    `}
-
-  ${(props) =>
-    props.marginTop &&
-    css`
-      margin-top: 200px;
-    `}
-
-  @media (max-width: 699px) {
-    margin-bottom: 30px;
-  }
-
-  .title-text {
+  h2 {
+    font-size: 3rem;
     font-family: "Libre Baskerville", "Times New Roman", Times, serif;
-    font-size: 5.5rem;
-    text-transform: uppercase;
-    color: black;
-    overflow: hidden;
-
-    .title-text__inner {
-      white-space: nowrap;
-      width: 100%;
-      display: flex;
-      align-items: center;
-    }
 
     @media (max-width: 699px) {
-      font-size: 8.5vw;
-    }
-
-    @media (min-width: 700px) and (max-width: 999px) {
-      font-size: 6.5vw;
+      font-size: 1.5rem;
     }
   }
 
-  .title-circle {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background: white;
-    margin: 0 1rem;
-    display: inline-table;
+  .o-special {
+    display: inline-block;
+    background: #f1fa3c;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    color: black;
 
     @media (max-width: 699px) {
-      width: 8.5vw;
-      height: 8.5vw;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.4rem;
+
+    @media (max-width: 699px) {
+      font-size: 0.8rem;
     }
   }
 `;
 
-export const TitleShadow = styled.div`
-  position: absolute;
-  top: -2%;
-  width: 20%;
-  height: 104%;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
+// * consider as global
+// todo: variable min-width
+export const Line = styled.hr`
+  border: 1px solid white;
+  background: white;
+  width: 30%;
+  min-width: 30px;
+`;
+
+// todo: make global, set direction to auto for responsiveness
+export const Flex = styled.div.attrs((props) => ({
+  direction: props.direction || "row",
+  align: props.align || "normal",
+  justify: props.justify || "normal",
+}))`
+  display: flex;
+  width: ${(props) => (props.stretch ? "100%" : "auto")};
+  /* height: min-content; */
+  flex-direction: ${(props) => props.direction};
+  justify-content: ${(props) => props.justify};
+  margin-top: ${(props) => props.marginTop && "60px"};
+  align-items: ${(props) => props.align};
+  flex-wrap: wrap;
+  /* row-gap: 140px; */
+`;
+
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  color: white;
+  /* width: 40%; */
+  min-width: 280px;
+  max-width: 500px;
 
   ${(props) =>
-    props.left &&
+    props.dropBottom &&
     css`
-      left: -5%;
+      align-self: flex-end;
+      transform: translateY(20%);
     `}
+`;
 
-  ${(props) =>
-    props.right &&
-    css`
-      right: -5%;
-      transform: scale(-1);
-    `}
+export const CardCategory = styled.p`
+  font-size: 0.8rem;
+  width: 80px;
+  display: inline-table;
+  text-align: right;
+  align-self: flex-end;
+`;
+
+export const CardDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .card-title {
+    font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+    width: 30%;
+    text-align: left;
+  }
+
+  .card-description {
+    width: 70%;
+    text-align: right;
+  }
 `;
