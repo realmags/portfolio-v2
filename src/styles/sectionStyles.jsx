@@ -10,7 +10,7 @@ export const SectionTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 `;
 
 export const TitleText = styled.div`
@@ -64,19 +64,24 @@ export const Line = styled.hr`
 
 // todo: make global, set direction to auto for responsiveness
 export const Flex = styled.div.attrs((props) => ({
-  direction: props.direction || "row",
-  align: props.align || "normal",
-  justify: props.justify || "normal",
+  direction: props.direction || "initial",
+  align: props.align || "initial",
+  justify: props.justify || "initial",
 }))`
   display: flex;
+  flex-wrap: wrap;
+
   width: ${(props) => (props.stretch ? "100%" : "auto")};
-  /* height: min-content; */
+  margin-top: ${(props) => props.marginTop && "60px"};
+
   flex-direction: ${(props) => props.direction};
   justify-content: ${(props) => props.justify};
-  margin-top: ${(props) => props.marginTop && "60px"};
   align-items: ${(props) => props.align};
-  flex-wrap: wrap;
-  /* row-gap: 140px; */
+
+  @media (max-width: 699px) {
+    flex-direction: initial;
+    justify-content: center;
+  }
 `;
 
 export const Grid = styled.div`
@@ -84,8 +89,8 @@ export const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(280px, 500px));
   justify-items: center;
   justify-content: center;
-  column-gap: 140px;
-  row-gap: 140px;
+  column-gap: 300px;
+  row-gap: 200px;
 
   @media (max-width: 1024px) {
     row-gap: 50px;

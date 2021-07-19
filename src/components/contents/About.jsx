@@ -45,19 +45,14 @@ function About() {
             <img src={sampleImg} alt="Sample image" />
           </Image>
         </Flex>
-        <Flex
-          marginTop
-          direction="row-reverse"
-          align="flex-start"
-          justify="space-between"
-        >
-          <Image wideWidth wideHeight bleed>
-            <img src={sampleImg} alt="Sample image" />
-          </Image>
+        <Flex marginTop align="flex-start" justify="space-between">
           <Paragraph marginLeft marginTop>
             As such, I am willing to learn and adapt to whatever. I am very much
             open to employment offers and intern opportunities.
           </Paragraph>
+          <Image wideWidth wideHeight bleed>
+            <img src={sampleImg} alt="Sample image" />
+          </Image>
         </Flex>
       </Container>
     </Section>

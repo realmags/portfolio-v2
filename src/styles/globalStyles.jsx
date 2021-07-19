@@ -53,8 +53,8 @@ export const Paragraph = styled.p.attrs((props) => ({
   font-size: 1.2rem;
   color: white;
   min-width: 280px;
-  width: 300px;
-  /* max-width: ${(props) => `calc(${props.width} * 1.8)`}; */
+  /* width: 280px; */
+  max-width: 300px;
   text-align: left;
   margin: 20px 0;
   margin-top: ${(props) => props.marginTop && "200px"};
@@ -75,12 +75,13 @@ export const Paragraph = styled.p.attrs((props) => ({
     props.emphasize &&
     css`
       font-family: "Libre Baskerville", "Times New Roman", Times, serif;
-      margin-left: 30px;
+      margin-left: 30px !important;
       width: 0;
     `}
 
   @media (max-width: 699px) {
     margin: 20px 0;
+    width: 280px;
   }
 `;
 
@@ -133,6 +134,10 @@ export const Image = styled.span`
     css`
       transform: translate(10%, -20%);
     `}
+
+  @media (max-width: 699px) {
+    transform: translate(0%, 0%);
+  }
 
   img {
     width: 100%;
