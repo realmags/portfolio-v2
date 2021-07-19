@@ -8,6 +8,7 @@ import {
   CardCategory,
   CardDetails,
   Flex,
+  Grid,
 } from "../../styles/sectionStyles";
 import { Container, Image } from "../../styles/globalStyles";
 
@@ -25,7 +26,7 @@ function Projects() {
         <p>See my works</p>
       </Subheading>
       <Container>
-        <Flex justify="space-around">
+        <Grid>
           {projects.map((project, index) => {
             if (index % 2 === 0)
               return (
@@ -45,7 +46,7 @@ function Projects() {
                 />
               );
           })}
-        </Flex>
+        </Grid>
       </Container>
     </Section>
   );

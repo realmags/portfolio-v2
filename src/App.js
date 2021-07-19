@@ -12,7 +12,7 @@ function App() {
       <Headline />
       <About />
       <Projects />
-      <div style={{ width: "100vw", height: "50vh" }}></div>
+      <div data-scroll-section style={{ width: "100vw", height: "50vh" }}></div>
     </Layout>
   );
 }

@@ -79,6 +79,19 @@ export const Flex = styled.div.attrs((props) => ({
   /* row-gap: 140px; */
 `;
 
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 500px));
+  justify-items: center;
+  justify-content: center;
+  column-gap: 140px;
+  row-gap: 140px;
+
+  @media (max-width: 1024px) {
+    row-gap: 50px;
+  }
+`;
+
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
@@ -94,6 +107,10 @@ export const Card = styled.div`
       align-self: flex-end;
       transform: translateY(20%);
     `}
+
+  @media (max-width: 1024px) {
+    transform: translateY(0%);
+  }
 `;
 
 export const CardCategory = styled.p`
