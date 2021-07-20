@@ -15,11 +15,10 @@ import { Container, Image } from "../../styles/globalStyles";
 import sampleImg from "../../assets/sample.jfif";
 import projects from "../../data/projects";
 
-// todo: consider using grid for content container
 function Projects() {
   return (
     <Section data-scroll-section>
-      <Subheading>
+      <Subheading alignLeft>
         <h2>
           Pr<span className="o-special">o</span>j<em>e</em>cts
         </h2>

@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
 export const Section = styled.section`
   width: 100%;
@@ -11,19 +12,58 @@ export const SectionTitle = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 100px;
+  position: relative;
+
+  .l-left {
+    left: 0;
+    justify-content: flex-start;
+  }
+
+  .l-right {
+    right: 0;
+    justify-content: flex-end;
+  }
+
+  .l-container {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 `;
 
-export const TitleText = styled.div`
+export const TitleText = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  width: max-content;
+  width: 60%;
   color: white;
   text-transform: uppercase;
   text-align: center;
+  margin: 0 auto;
+
+  /* border: 1px solid white; */
+
+  ${(props) =>
+    props.alignLeft &&
+    css`
+      text-align: left;
+      /* margin-left: 60px; */
+    `}
+
+  ${(props) =>
+    props.alignRight &&
+    css`
+      text-align: right;
+      /* margin-right: 60px; */
+    `}
 
   h2 {
     font-size: 3rem;
     font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+    /* background: black; */
+    /* z-index: 10; */
 
     @media (max-width: 699px) {
       font-size: 1.5rem;
@@ -37,6 +77,7 @@ export const TitleText = styled.div`
     height: 3rem;
     border-radius: 100%;
     color: black;
+    text-align: center;
 
     @media (max-width: 699px) {
       width: 1.5rem;
@@ -55,14 +96,14 @@ export const TitleText = styled.div`
 
 // * consider as global
 // todo: variable min-width
-export const Line = styled.hr`
+export const Line = styled(motion.hr)`
   border: 1px solid white;
   background: white;
-  width: 30%;
-  min-width: 30px;
+  /* width: 30%; */
+  min-width: 15%;
 `;
 
-// todo: make global, set direction to auto for responsiveness
+// todo: consider as global
 export const Flex = styled.div.attrs((props) => ({
   direction: props.direction || "initial",
   align: props.align || "initial",

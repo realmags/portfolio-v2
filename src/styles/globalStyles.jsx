@@ -50,6 +50,7 @@ export const Paragraph = styled.p.attrs((props) => ({
   width: props.width || "250px",
 }))`
   text-transform: uppercase;
+  text-align: justify;
   font-size: 1.2rem;
   color: white;
   min-width: 280px;

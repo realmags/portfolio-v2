@@ -12,7 +12,6 @@ import Subheading from "../Subheading";
 
 import sampleImg from "../../assets/sample.jfif";
 
-// todo: fix responsiveness of each flex content
 function About() {
   const currentAge = new Date().getFullYear() - 2000;
 
