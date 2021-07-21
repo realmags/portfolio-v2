@@ -7,7 +7,6 @@ import {
   Card,
   CardCategory,
   CardDetails,
-  Flex,
   Grid,
 } from "../../styles/sectionStyles";
 import { Container, Image } from "../../styles/globalStyles";

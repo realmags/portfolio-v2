@@ -31,6 +31,10 @@ export const SectionTitle = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
+
+    @media (max-width: 699px) {
+      width: 30%;
+    }
   }
 `;
 
@@ -49,24 +53,20 @@ export const TitleText = styled(motion.div)`
     props.alignLeft &&
     css`
       text-align: left;
-      /* margin-left: 60px; */
     `}
 
   ${(props) =>
     props.alignRight &&
     css`
       text-align: right;
-      /* margin-right: 60px; */
     `}
 
   h2 {
     font-size: 3rem;
     font-family: "Libre Baskerville", "Times New Roman", Times, serif;
-    /* background: black; */
-    /* z-index: 10; */
 
     @media (max-width: 699px) {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
   }
 
@@ -80,8 +80,8 @@ export const TitleText = styled(motion.div)`
     text-align: center;
 
     @media (max-width: 699px) {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
     }
   }
 
@@ -89,7 +89,7 @@ export const TitleText = styled(motion.div)`
     font-size: 1.4rem;
 
     @media (max-width: 699px) {
-      font-size: 0.8rem;
+      font-size: 1.2rem;
     }
   }
 `;
@@ -111,6 +111,7 @@ export const Flex = styled.div.attrs((props) => ({
 }))`
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 
   width: ${(props) => (props.stretch ? "100%" : "auto")};
   margin-top: ${(props) => props.marginTop && "60px"};
@@ -132,9 +133,11 @@ export const Grid = styled.div`
   justify-content: center;
   column-gap: 300px;
   row-gap: 200px;
+  margin-bottom: 300px;
 
   @media (max-width: 1024px) {
     row-gap: 50px;
+    margin-bottom: initial;
   }
 `;
 

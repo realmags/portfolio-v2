@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
 export const Container = styled.div`
   @media (max-width: 699px) {
@@ -47,7 +48,7 @@ export const Flex = styled.div`
 `;
 
 export const Paragraph = styled.p.attrs((props) => ({
-  width: props.width || "250px",
+  width: props.size || "300px",
 }))`
   text-transform: uppercase;
   text-align: justify;
@@ -55,10 +56,17 @@ export const Paragraph = styled.p.attrs((props) => ({
   color: white;
   min-width: 280px;
   /* width: 280px; */
-  max-width: 300px;
+  max-width: ${(props) => props.width};
   text-align: left;
-  margin: 20px 0;
-  margin-top: ${(props) => props.marginTop && "200px"};
+  /* margin: 20px 0; */
+  margin-bottom: 20px;
+  margin-top: ${(props) => (props.marginTop ? "200px" : "20px")};
+
+  ${(props) =>
+    props.fontBigger &&
+    css`
+      font-size: 2rem;
+    `}
 
   ${(props) =>
     props.marginRight &&
@@ -76,13 +84,18 @@ export const Paragraph = styled.p.attrs((props) => ({
     props.emphasize &&
     css`
       font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+    `}
+
+  ${(props) =>
+    props.indent &&
+    css`
       margin-left: 30px !important;
-      width: 0;
     `}
 
   @media (max-width: 699px) {
     margin: 20px 0;
     width: 280px;
+    font-size: ${(props) => (props.fontSmaller ? "1rem" : "1.2rem")};
   }
 `;
 
@@ -155,4 +168,32 @@ export const Highlight = styled.span`
 
 export const Tab = styled.span`
   margin-left: 3rem;
+`;
+
+export const Icon = styled(motion.span).attrs((props) => ({
+  top: props.top || "0%",
+  left: props.left || "0%",
+}))`
+  position: absolute;
+  top: ${(props) => props.top};
+  left: ${(props) => props.left};
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: 2px solid #f1fa3c;
+  border-radius: 50%;
+
+  @media (max-width: 699px) {
+    width: 30px;
+    height: 30px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  path {
+    fill: white;
+  }
 `;

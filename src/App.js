@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import About from "./components/contents/About";
 import Headline from "./components/contents/Headline";
 import Projects from "./components/contents/Projects";
+import Contact from "./components/contents/Contact";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Headline />
       <About />
       <Projects />
+      <Contact />
       <div data-scroll-section style={{ width: "100vw", height: "50vh" }}></div>
     </Layout>
   );

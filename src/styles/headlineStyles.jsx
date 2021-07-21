@@ -132,6 +132,6 @@ export const Shadow = styled.div.attrs((props) => ({
     css`
       right: 0%;
       transform: scale(-1);
-      min-width: 5%;
+      min-width: 10%;
     `}
 `;

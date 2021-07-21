@@ -36,7 +36,7 @@ function About() {
               Although I already completed my degree in computer engineering, I
               still and always feel like a student --
             </Paragraph>
-            <Paragraph marginRight emphasize>
+            <Paragraph marginRight emphasize indent>
               for learning is a lifelong undertaking.
             </Paragraph>
           </Flex>

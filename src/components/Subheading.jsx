@@ -27,12 +27,12 @@ function Subheading(props) {
   return (
     <SectionTitle ref={titleRef}>
       <span className="l-container l-left">
-        <Shadow shadowSize="10%" left />
+        <Shadow left />
         <Rule {...setProps("alignRight" in props)} />
       </span>
       <TitleText {...titleProps}>{props.children}</TitleText>
       <span className="l-container l-right">
-        <Shadow shadowSize="10%" right />
+        <Shadow right />
         <Rule {...setProps("alignLeft" in props)} />
       </span>
     </SectionTitle>
