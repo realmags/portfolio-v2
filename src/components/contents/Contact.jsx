@@ -30,21 +30,65 @@ function Contact() {
             kentbryan.maglinao@ustp.edu.ph
           </Paragraph>
           <Icon
-            left="50%"
+            left="50"
             animate={{
-              y: ["0%", "50%", "0%"],
-              scale: [1, 0.8, 1],
+              y: ["0%", "100%"],
               x: 0,
             }}
             transition={{
-              repeat: Infinity,
-              //   ease: [0.6, 0.05, -0.01, 0.9],
-              duration: 5,
-              //   times: [0, 1, 1],
-              ease: "linear",
+              type: "tween",
+              ease: [0.6, 0.05, -0.01, 0.9],
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "mirror",
+              },
+            }}
+            whileHover={{
+              scale: 1.1,
+              transition: {
+                duration: 0.3,
+              },
+            }}
+            whileTap={{
+              scale: 0.9,
+              transition: {
+                duration: 0.3,
+              },
             }}
           >
             <Facebook />
+          </Icon>
+          <Icon
+            left="20"
+            top="100"
+            animate={{
+              y: ["0%", "80%"],
+              x: 0,
+            }}
+            transition={{
+              type: "tween",
+              ease: [0.6, 0.05, -0.01, 0.9],
+              y: {
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "mirror",
+              },
+            }}
+            whileHover={{
+              scale: 1.1,
+              transition: {
+                duration: 0.3,
+              },
+            }}
+            whileTap={{
+              scale: 0.9,
+              transition: {
+                duration: 0.3,
+              },
+            }}
+          >
+            <Github />
           </Icon>
         </Flex>
       </Container>

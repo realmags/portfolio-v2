@@ -171,21 +171,26 @@ export const Tab = styled.span`
 `;
 
 export const Icon = styled(motion.span).attrs((props) => ({
-  top: props.top || "0%",
-  left: props.left || "0%",
+  top: parseInt(props.top) || 0,
+  left: parseInt(props.left) || 0,
 }))`
   position: absolute;
-  top: ${(props) => props.top};
-  left: ${(props) => props.left};
+  top: ${(props) => props.top + "%"};
+  left: ${(props) => props.left + "%"};
   width: 40px;
   height: 40px;
   padding: 10px;
   border: 2px solid #f1fa3c;
   border-radius: 50%;
+  background: black;
+
+  /* box-shadow: 5px 5px 10px #cdd533, -5px -5px 10px #ffff45; */
+  /* box-shadow: 1px 1px 4px #f1fa3c; */
 
   @media (max-width: 699px) {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+    top: ${(props) => (props.top > 0 ? `${props.top}%` : `${props.top - 80}%`)};
   }
 
   svg {
