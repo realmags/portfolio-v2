@@ -205,3 +205,15 @@ export const Icon = styled(motion.span).attrs((props) => ({
     fill: white;
   }
 `;
+
+export const Cursor = styled.div`
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #f1fa3c;
+
+  .cursor-text {
+    font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+    color: black;
+  }
+`;
