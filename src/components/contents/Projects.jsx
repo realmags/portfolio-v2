@@ -74,8 +74,19 @@ function ProjectCard(props) {
   return (
     <Card {...cardProps}>
       <CardCategory>{category}</CardCategory>
-      <Image {...imgProps}>
-        <img src={sampleImg} alt="Sample image" />
+      <Image
+        data-scroll
+        data-scroll-speed="0.5"
+        data-scroll-position="center"
+        {...imgProps}
+      >
+        <img
+          data-scroll
+          data-scroll-speed="-0.5"
+          src={sampleImg}
+          alt="Sample image"
+          data-scroll-position="center"
+        />
       </Image>
       <CardDetails>
         <strong className="card-title">{title}</strong>

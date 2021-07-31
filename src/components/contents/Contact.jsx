@@ -22,7 +22,7 @@ function Contact() {
         <p>Connect with me</p>
       </Subheading>
       <Container>
-        <Flex direction="column" justify="flex-start">
+        <Flex direction="column" justify="flex-start" marginBottom>
           <Paragraph fontBigger size="400px">
             Wanna <Highlight>collaborate</Highlight> with me?
           </Paragraph>

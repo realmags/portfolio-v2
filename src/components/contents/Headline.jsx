@@ -21,7 +21,7 @@ function Headline() {
   };
 
   return (
-    <Container data-scroll-section>
+    <Container data-scroll-section id="#main">
       <BannerContainer>
         <BannerTitle>
           <span className="b-title">

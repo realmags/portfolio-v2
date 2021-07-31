@@ -122,8 +122,14 @@ export const Flex = styled.div.attrs((props) => ({
 
   @media (max-width: 699px) {
     flex-direction: initial;
-    justify-content: center;
+    /* justify-content: center; */
   }
+
+  ${(props) =>
+    props.marginBottom &&
+    css`
+      margin-bottom: 100px;
+    `}
 `;
 
 export const Grid = styled.div`

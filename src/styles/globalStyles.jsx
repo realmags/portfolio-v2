@@ -104,6 +104,8 @@ export const Image = styled.span`
   min-width: 280px;
   min-height: 400px;
   margin: 20px 0;
+  overflow: hidden;
+  background: black;
 
   @media (max-width: 699px) {
     margin: 20px 0;
@@ -183,6 +185,7 @@ export const Icon = styled(motion.span).attrs((props) => ({
   border: 2px solid #f1fa3c;
   border-radius: 50%;
   background: black;
+  z-index: 10;
 
   /* box-shadow: 5px 5px 10px #cdd533, -5px -5px 10px #ffff45; */
   /* box-shadow: 1px 1px 4px #f1fa3c; */

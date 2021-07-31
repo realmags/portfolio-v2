@@ -40,7 +40,7 @@ function About() {
               for learning is a lifelong undertaking.
             </Paragraph>
           </Flex>
-          <Image narrowWidth wideHeight>
+          <Image data-scroll data-scroll-speed="2" narrowWidth wideHeight>
             <img src={sampleImg} alt="Sample image" />
           </Image>
         </Flex>
@@ -49,7 +49,7 @@ function About() {
             As such, I am willing to learn and adapt to whatever. I am very much
             open to employment offers and intern opportunities.
           </Paragraph>
-          <Image wideWidth wideHeight bleed>
+          <Image data-scroll data-scroll-speed="1.5" wideWidth wideHeight bleed>
             <img src={sampleImg} alt="Sample image" />
           </Image>
         </Flex>

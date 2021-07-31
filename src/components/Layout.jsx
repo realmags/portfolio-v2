@@ -4,6 +4,7 @@ import LocomotiveScroll from "locomotive-scroll";
 // styled components
 import { createGlobalStyle } from "styled-components";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -45,6 +46,7 @@ const GlobalStyle = createGlobalStyle`
     background: black;
     /* TODO: ADD GOOGLE FONT IMPORT */
     font-family: Montserrat ,Verdana, Geneva, Tahoma, sans-serif;
+    /* padding-bottom: 50px; */
   }
 
   a {
@@ -77,6 +79,7 @@ function Layout({ children }) {
       <div ref={scrollContainer} data-scroll-container>
         <Header />
         <main>{children}</main>
+        <Footer />
       </div>
     </>
   );
