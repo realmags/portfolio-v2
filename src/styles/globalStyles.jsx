@@ -207,13 +207,34 @@ export const Icon = styled(motion.span).attrs((props) => ({
 `;
 
 export const Cursor = styled.div`
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
   background: #f1fa3c;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s linear;
+  /* transition: opacity 0.1s cubic-bezier(0.6, 0.05, -0.01, 0.9); */
+  /* transition-property: width, height, border; */
+  transition-property: opacity;
+  /* will-change: width, height, transform, border; */
+  will-change: opacity, transform;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 
   .cursor-text {
     font-family: "Libre Baskerville", "Times New Roman", Times, serif;
     color: black;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &.hovered {
+    opacity: 1;
   }
 `;

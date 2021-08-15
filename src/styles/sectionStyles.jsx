@@ -128,7 +128,7 @@ export const Flex = styled.div.attrs((props) => ({
   ${(props) =>
     props.marginBottom &&
     css`
-      margin-bottom: 100px;
+      margin-bottom: 200px;
     `}
 `;
 
@@ -147,7 +147,7 @@ export const Grid = styled.div`
   }
 `;
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   display: flex;
   flex-direction: column;
   text-transform: uppercase;

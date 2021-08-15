@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 // components
 import Subheading from "../Subheading";
@@ -14,7 +15,7 @@ import { Container, Image } from "../../styles/globalStyles";
 import sampleImg from "../../assets/sample.jfif";
 import projects from "../../data/projects";
 
-function Projects() {
+function Projects({ handleCursor }) {
   return (
     <Section data-scroll-section>
       <Subheading alignLeft>
@@ -32,6 +33,7 @@ function Projects() {
                   title={project.title}
                   description={project.description}
                   category={project.category}
+                  handleCursor={handleCursor}
                 />
               );
             else
@@ -41,6 +43,7 @@ function Projects() {
                   description={project.description}
                   category={project.category}
                   narrowHeight
+                  handleCursor={handleCursor}
                 />
               );
           })}
@@ -51,7 +54,7 @@ function Projects() {
 }
 
 function ProjectCard(props) {
-  const { title, description, category } = props;
+  const { title, description, category, handleCursor } = props;
 
   const findProps = () => {
     let cardProps = {},
@@ -72,7 +75,11 @@ function ProjectCard(props) {
   const [cardProps, imgProps] = findProps();
 
   return (
-    <Card {...cardProps}>
+    <Card
+      {...cardProps}
+      onHoverStart={() => handleCursor("hovered")}
+      onHoverEnd={handleCursor}
+    >
       <CardCategory>{category}</CardCategory>
       <Image
         data-scroll

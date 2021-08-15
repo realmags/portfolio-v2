@@ -19,7 +19,7 @@ function Contact() {
         <h2>
           C<span className="o-special">o</span>n<em>t</em>act
         </h2>
-        <p>Connect with me</p>
+        <p>Strike a conversation</p>
       </Subheading>
       <Container>
         <Flex direction="column" justify="flex-start" marginBottom>
@@ -57,7 +57,12 @@ function Contact() {
               },
             }}
           >
-            <Facebook />
+            <a
+              href="https://www.facebook.com/kentbryan.maglinao"
+              target="_blank"
+            >
+              <Facebook />
+            </a>
           </Icon>
           <Icon
             left="20"
@@ -88,7 +93,9 @@ function Contact() {
               },
             }}
           >
-            <Github />
+            <a href="https://github.com/realmags" target="_blank">
+              <Github />
+            </a>
           </Icon>
         </Flex>
       </Container>

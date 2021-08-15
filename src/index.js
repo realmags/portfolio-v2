@@ -5,9 +5,14 @@ import reportWebVitals from "./reportWebVitals";
 import "./normalize.css";
 import "./locomotive-scroll.css";
 
+// provider
+import GlobalProvider from "./context/globalContext";
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GlobalProvider>
+      <App />
+    </GlobalProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
