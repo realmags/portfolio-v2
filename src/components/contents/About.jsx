@@ -41,7 +41,10 @@ function About() {
             </Paragraph>
           </Flex>
           <Image data-scroll data-scroll-speed="2" narrowWidth wideHeight>
-            <img src={sampleImg} alt="Sample image" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/portfolio-kbcm.appspot.com/o/public%2Fmags-portrait.jpg?alt=media&token=d7dfde48-b9d9-4dd1-8f5a-e97677905d03"
+              alt="Mags posing on a bench"
+            />
           </Image>
         </Flex>
         <Flex marginTop align="flex-start" justify="space-between">
@@ -50,7 +53,10 @@ function About() {
             open to employment offers and intern opportunities.
           </Paragraph>
           <Image data-scroll data-scroll-speed="1.5" wideWidth wideHeight bleed>
-            <img src={sampleImg} alt="Sample image" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/portfolio-kbcm.appspot.com/o/public%2Fbevz-group-photo.jpg?alt=media&token=a163f32c-ef83-42bf-8f54-14d49a809fd6"
+              alt="Mags with a group of close friends"
+            />
           </Image>
         </Flex>
       </Container>

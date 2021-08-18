@@ -2,6 +2,7 @@
 
 # development
 /src/data
+/src/firebase
 
 # dependencies
 /node_modules
