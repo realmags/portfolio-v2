@@ -10,8 +10,6 @@ import {
 } from "../../styles/globalStyles";
 import Subheading from "../Subheading";
 
-import sampleImg from "../../assets/sample.jfif";
-
 function About() {
   const currentAge = new Date().getFullYear() - 2000;
 
@@ -32,7 +30,7 @@ function About() {
               sickening websites and turning them to reality is something I am
               really passionate about.
             </Paragraph>
-            <Paragraph marginRight>
+            <Paragraph marginRighT>
               Although I already completed my degree in computer engineering, I
               still and always feel like a student --
             </Paragraph>
@@ -42,7 +40,7 @@ function About() {
           </Flex>
           <Image data-scroll data-scroll-speed="2" narrowWidth wideHeight>
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/portfolio-kbcm.appspot.com/o/public%2Fmags-portrait.jpg?alt=media&token=d7dfde48-b9d9-4dd1-8f5a-e97677905d03"
+              src="https://storage.googleapis.com/portfolio-kbcm.appspot.com/public/mags-portrait.jpg"
               alt="Mags posing on a bench"
             />
           </Image>
@@ -54,7 +52,7 @@ function About() {
           </Paragraph>
           <Image data-scroll data-scroll-speed="1.5" wideWidth wideHeight bleed>
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/portfolio-kbcm.appspot.com/o/public%2Fbevz-group-photo.jpg?alt=media&token=a163f32c-ef83-42bf-8f54-14d49a809fd6"
+              src="https://storage.googleapis.com/portfolio-kbcm.appspot.com/public/bevz-group-photo.jpg"
               alt="Mags with a group of close friends"
             />
           </Image>
