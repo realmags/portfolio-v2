@@ -7,6 +7,9 @@ import Header from "./Header";
 import Footer from "./Footer";
 import CustomCursor from "./CustomCursor";
 
+// provider
+import { useGlobalStateContext } from "../context/globalContext";
+
 const GlobalStyle = createGlobalStyle`
   * {
     text-decoration: none;
@@ -62,15 +65,18 @@ const GlobalStyle = createGlobalStyle`
 
 function Layout({ children }) {
   let scrollContainer = useRef(null);
+  const { projects } = useGlobalStateContext();
 
   useEffect(() => {
-    const scroll = new LocomotiveScroll({
-      el: scrollContainer.current,
-      smooth: true,
-    });
+    let scroll;
+    projects &&
+      (scroll = new LocomotiveScroll({
+        el: scrollContainer.current,
+        smooth: true,
+      }));
 
-    return () => scroll.destroy();
-  }, []);
+    return () => projects && scroll.destroy();
+  }, [projects]);
   // const scroll = new LocomotiveScroll();
 
   return (

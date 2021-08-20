@@ -1,3 +1,5 @@
+import React, { useEffect } from "react";
+
 // Components
 import Layout from "./components/Layout";
 // import Banner from "./components/contents/Banner";
@@ -12,6 +14,8 @@ import {
   useGlobalDispatchContext,
 } from "./context/globalContext";
 
+import { firestore } from "./firebase/config";
+
 function App() {
   const { cursorStyles } = useGlobalStateContext();
   const dispatch = useGlobalDispatchContext();
@@ -20,6 +24,22 @@ function App() {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || null;
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType });
   };
+
+  const fetchProjects = async () => {
+    let documents = [];
+    const snapshot = await firestore.collection("projects").get();
+
+    if (snapshot.empty) console.log("No documents found.");
+    snapshot.forEach((doc) => {
+      documents.push({ ...doc.data(), id: doc.id });
+    });
+
+    dispatch({ type: "FETCH_PROJECTS", projects: documents });
+  };
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
 
   return (
     <Layout>

@@ -6,7 +6,7 @@ import {
   BannerTitle,
   BannerParagraph,
 } from "../../styles/bannerStyles";
-import { Container, Flex, Italic } from "../../styles/globalStyles";
+import { Container, Flex } from "../../styles/globalStyles";
 
 function Banner() {
   return (
@@ -23,7 +23,7 @@ function Banner() {
             >
               K
             </span>
-            <Italic>e</Italic>nt
+            <em>e</em>nt
           </span>
           <span className="banner-title" data-scroll>
             <span
@@ -36,7 +36,7 @@ function Banner() {
               B
             </span>
             ry
-            <Italic>a</Italic>n{" "}
+            <em>a</em>n{" "}
             <span
               className="title-float"
               data-scroll
@@ -59,7 +59,7 @@ function Banner() {
               M
             </span>
             agli
-            <Italic>n</Italic>ao
+            <em>n</em>ao
           </span>
         </BannerTitle>
         <BannerParagraph data-scroll data-scroll-speed="-3">

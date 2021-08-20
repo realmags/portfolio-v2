@@ -13,9 +13,13 @@ import {
 import { Container, Image } from "../../styles/globalStyles";
 
 import sampleImg from "../../assets/sample.jfif";
-import projects from "../../data/projects";
+// import projects from "../../data/projects";
+
+// provider
+import { useGlobalStateContext } from "../../context/globalContext";
 
 function Projects({ handleCursor }) {
+  const { projects } = useGlobalStateContext();
   return (
     <Section data-scroll-section>
       <Subheading alignLeft>
@@ -26,27 +30,21 @@ function Projects({ handleCursor }) {
       </Subheading>
       <Container>
         <Grid>
-          {projects.map((project, index) => {
-            if (index % 2 === 0)
-              return (
-                <ProjectCard
-                  title={project.title}
-                  description={project.description}
-                  category={project.category}
-                  handleCursor={handleCursor}
-                />
-              );
-            else
-              return (
-                <ProjectCard
-                  title={project.title}
-                  description={project.description}
-                  category={project.category}
-                  narrowHeight
-                  handleCursor={handleCursor}
-                />
-              );
-          })}
+          {projects &&
+            projects.map((project, index) => {
+              if (index % 2 === 0)
+                return (
+                  <ProjectCard handleCursor={handleCursor} project={project} />
+                );
+              else
+                return (
+                  <ProjectCard
+                    narrowHeight
+                    handleCursor={handleCursor}
+                    project={project}
+                  />
+                );
+            })}
         </Grid>
       </Container>
     </Section>
@@ -54,7 +52,7 @@ function Projects({ handleCursor }) {
 }
 
 function ProjectCard(props) {
-  const { title, description, category, handleCursor } = props;
+  const { project, handleCursor } = props;
 
   const findProps = () => {
     let cardProps = {},
@@ -80,7 +78,7 @@ function ProjectCard(props) {
       onHoverStart={() => handleCursor("hovered")}
       onHoverEnd={handleCursor}
     >
-      <CardCategory>{category}</CardCategory>
+      <CardCategory>{project.category}</CardCategory>
       <Image
         data-scroll
         data-scroll-speed="0.5"
@@ -90,14 +88,14 @@ function ProjectCard(props) {
         <img
           data-scroll
           data-scroll-speed="-0.5"
-          src={sampleImg}
+          src={project.thumbnail}
           alt="Sample image"
           data-scroll-position="center"
         />
       </Image>
       <CardDetails>
-        <strong className="card-title">{title}</strong>
-        <p className="card-description">{description}</p>
+        <strong className="card-title">{project.name}</strong>
+        <p className="card-description">{project.type}</p>
       </CardDetails>
     </Card>
   );

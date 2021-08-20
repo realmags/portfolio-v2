@@ -52,6 +52,10 @@ export const BannerTitle = styled.h1`
     display: inline-block;
   }
 
+  em {
+    font-weight: normal !important;
+  }
+
   @media (max-width: 699px) {
     font-size: 13vw;
   }

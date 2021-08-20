@@ -17,6 +17,12 @@ const globalReducer = (state, action) => {
         cursorType: action.cursorType,
       };
     }
+    case "FETCH_PROJECTS": {
+      return {
+        ...state,
+        projects: action.projects,
+      };
+    }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -27,6 +33,7 @@ function GlobalProvider({ children }) {
   const [state, dispatch] = useReducer(globalReducer, {
     cursorType: null,
     cursorStyles: ["hovered"],
+    projects: null,
   });
 
   return (

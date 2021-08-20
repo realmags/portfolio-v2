@@ -172,10 +172,6 @@ export const Tab = styled.span`
   margin-left: 3rem;
 `;
 
-export const Italic = styled.em`
-  font-weight: normal;
-`;
-
 export const Icon = styled(motion.span).attrs((props) => ({
   top: parseInt(props.top) || 0,
   left: parseInt(props.left) || 0,
